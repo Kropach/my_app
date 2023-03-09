@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "535629260733",
+    "project_id": "myapp-8aff5",
+    "storage_bucket": "myapp-8aff5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535629260733:android:dd8b064d795ca3870314d4",
+        "android_client_info": {
+          "package_name": "com.kotm.my_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535629260733-vm5fqmtn5qrhb7klekefr5s29hvgjg4q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXC2Q0VcXcbON6q1m54ilhJ5ns0sv2s5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535629260733-vm5fqmtn5qrhb7klekefr5s29hvgjg4q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
