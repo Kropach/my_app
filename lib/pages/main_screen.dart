@@ -18,13 +18,25 @@ class MainScreen extends StatelessWidget {
         title: Text("Booknote", style: TextStyle(color: Colors.white),),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Text('Main Screen'),
-          ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/bookMarks');
-          }, child: Text('bookmarks'))
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(onPressed: () {
+                Navigator.pushNamed(context, '/bookMarks');
+              }, child: Text('bookmarks')),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(onPressed: () {
+                Navigator.pushNamed(context, '/bookMarks');
+              }, child: Text('bookmarks')),
+            )
+          ],
+        ),
       ),
     );
   }

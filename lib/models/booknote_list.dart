@@ -1,33 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/paralax_flow_delegate.dart';
+import 'package:my_app/pages/create_bookmark.dart';
 
 
 class BooknoteList extends StatelessWidget {
   BooknoteList({
     super.key,
+    required this.id,
     required this.title,
     required this.author,
     required this.text
   });
 
+  final String id;
   final String title;
   final String author;
   final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-      child: AspectRatio(
-        aspectRatio: 16 / 4,
-        child: Stack(
-            children: [
-              _buildParallaxBackground(context),
-              _buildGradient(),
-              _buildTitleAndSubtitle(),
-            ],
-          ),
-        )
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: Color(-7840182),
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        border: Border.all(color: Colors.black, width: 1.0),
+      ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CreateBookmark(id: id, author: author,
+                  title: title, text: text),
+            ),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+          child: AspectRatio(
+            aspectRatio: 16 / 4,
+            child: Stack(
+                children: [
+                  _buildParallaxBackground(context),
+                  _buildGradient(),
+                  _buildTitleAndSubtitle(),
+                ],
+              ),
+            )
+        ),
+      ),
     );
   }
 
@@ -51,8 +72,6 @@ class BooknoteList extends StatelessWidget {
     return Positioned.fill(
       child: DecoratedBox(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-          border: Border.all(color: Colors.black, width: 1.0),
           gradient: LinearGradient(
             colors: <Color>[
               Colors.transparent,
