@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:my_app/parallax_parent_data.dart';
+import 'package:my_app/common/parallax_parent_data.dart';
 
 
 class RenderParallax extends RenderBox
@@ -48,45 +48,33 @@ class RenderParallax extends RenderBox
   void performLayout() {
     size = constraints.biggest;
 
-    // Force the background to take up all available width
-    // and then scale its height based on the image's aspect ratio.
     final background = child!;
     final backgroundImageConstraints =
     BoxConstraints.tightFor(width: size.width);
     background.layout(backgroundImageConstraints, parentUsesSize: true);
 
-    // Set the background's local offset, which is zero.
     (background.parentData as ParallaxParentData).offset = Offset.zero;
   }
 
   @override
   void paint(PaintingContext context, Offset offset) {
-    // Get the size of the scrollable area.
     final viewportDimension = scrollable.position.viewportDimension;
 
-    // Calculate the global position of this list item.
     final scrollableBox = scrollable.context.findRenderObject() as RenderBox;
     final backgroundOffset =
     localToGlobal(size.centerLeft(Offset.zero), ancestor: scrollableBox);
 
-    // Determine the percent position of this list item within the
-    // scrollable area.
     final scrollFraction =
     (backgroundOffset.dy / viewportDimension).clamp(0.0, 1.0);
 
-    // Calculate the vertical alignment of the background
-    // based on the scroll percent.
     final verticalAlignment = Alignment(0.0, scrollFraction * 2 - 1);
 
-    // Convert the background alignment into a pixel offset for
-    // painting purposes.
     final background = child!;
     final backgroundSize = background.size;
     final listItemSize = size;
     final childRect =
     verticalAlignment.inscribe(backgroundSize, Offset.zero & listItemSize);
 
-    // Paint the background.
     context.paintChild(
         background,
         (background.parentData as ParallaxParentData).offset +

@@ -27,13 +27,13 @@ class MainScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(onPressed: () {
                 Navigator.pushNamed(context, '/bookMarks');
-              }, child: Text('bookmarks')),
+              }, child: Text('Bookmarks')),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(onPressed: () {
-                Navigator.pushNamed(context, '/bookMarks');
-              }, child: Text('bookmarks')),
+                Navigator.pushNamed(context, '/booksToRead');
+              }, child: Text('Book to read')),
             )
           ],
         ),

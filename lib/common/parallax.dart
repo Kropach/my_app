@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/render_parallax.dart';
+import 'package:my_app/common/render_parallax.dart';
 
 
 class Parallax extends SingleChildRenderObjectWidget {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:my_app/models/booknote_list.dart';
 
 
 class CreateBookmark extends StatefulWidget {
@@ -31,29 +30,6 @@ class _CreateBookmarkState extends State<CreateBookmark> {
     super.initState();
   }
 
-  void _openMenu() {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (BuildContext context) {
-          return Scaffold(
-              appBar: AppBar(title: Text('Menu'),),
-              body: Row(
-                children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.pushNamedAndRemoveUntil(
-                            context, '/', (route) => false
-                        );
-                      },
-                      child: Text('Home')
-                  )
-                ],
-              )
-          );
-        })
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     if (!widget.id.isEmpty){
@@ -65,12 +41,6 @@ class _CreateBookmarkState extends State<CreateBookmark> {
       appBar: AppBar(
         title: Text(appBarText, style: TextStyle(color: Colors.white),),
         centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: _openMenu,
-              icon: Icon(Icons.menu_outlined)
-          )
-        ],
       ),
       body: Center(
         child: Column(

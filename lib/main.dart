@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/pages/home.dart';
 import 'package:my_app/pages/create_bookmark.dart';
 import 'package:my_app/pages/main_screen.dart';
+import 'package:my_app/pages/book_to_read.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -16,7 +17,8 @@ void main() => runApp(
       '/' : (context) => const MainScreen(),
       '/bookMarks' : (context) => const Home(),
       '/createBookmark' : (context) => const CreateBookmark(id: "", author: "",
-          title: "", text: "")
+          title: "", text: ""),
+      '/booksToRead' : (context) => const BookToRead(),
     },
   )
 );
