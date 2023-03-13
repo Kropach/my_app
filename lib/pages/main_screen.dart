@@ -25,15 +25,19 @@ class MainScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(onPressed: () {
-                Navigator.pushNamed(context, '/bookMarks');
-              }, child: Text('Bookmarks')),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/bookMarks');
+                  },
+                  child: Text('Bookmarks')),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(onPressed: () {
-                Navigator.pushNamed(context, '/booksToRead');
-              }, child: Text('Book to read')),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/bookManager');
+                  },
+                  child: const Text('Book manager')),
             )
           ],
         ),

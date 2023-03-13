@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_app/pages/home.dart';
 import 'package:my_app/pages/create_bookmark.dart';
 import 'package:my_app/pages/main_screen.dart';
-import 'package:my_app/pages/book_to_read.dart';
+import 'package:my_app/pages/book_manager.dart';
+import 'package:my_app/pages/create_book_manager_mark.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -18,7 +19,11 @@ void main() => runApp(
       '/bookMarks' : (context) => const Home(),
       '/createBookmark' : (context) => const CreateBookmark(id: "", author: "",
           title: "", text: ""),
-      '/booksToRead' : (context) => const BookToRead(),
+      '/bookManager' : (context) => const BookManager(),
+      '/createBookManagerMark': (context) => const CreateBookManagerMark(
+          id: '', author: '', title: '',
+          icon: 'waiting', isInShoplist: 'N'
+      )
     },
   )
 );

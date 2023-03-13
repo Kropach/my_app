@@ -28,11 +28,15 @@ class _CreateBookmarkState extends State<CreateBookmark> {
   @override
   void initState() {
     super.initState();
+    id = widget.id;
+    author = widget.author;
+    title = widget.title;
+    text = widget.text;
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!widget.id.isEmpty){
+    if (widget.id.isNotEmpty){
       appBarText = 'Edit Booknote';
     }
 
@@ -59,7 +63,7 @@ class _CreateBookmarkState extends State<CreateBookmark> {
                 ),
                 decoration: const InputDecoration(
                   filled: true,
-                  fillColor: Color(-7840182),
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(),
                   // labelText: 'Author',
 
@@ -81,7 +85,7 @@ class _CreateBookmarkState extends State<CreateBookmark> {
                 ),
                 decoration: const InputDecoration(
                   filled: true,
-                  fillColor: Color(-7840182),
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(),
                   // labelText: 'Title',
                 ),
@@ -102,7 +106,7 @@ class _CreateBookmarkState extends State<CreateBookmark> {
                 ),
                 decoration: const InputDecoration(
                   filled: true,
-                  fillColor: Color(-7840182),
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(),
                   // labelText: 'Text',
                 ),
